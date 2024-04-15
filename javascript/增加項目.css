@@ -1,0 +1,38 @@
+#itemList li {
+    padding: 5px 8px;
+    margin-top: 4px;
+    font-size: 14pt;
+    width: 180px;
+    border-radius: 6px;
+}
+
+.odd-item {
+    background-color: rgb(165, 228, 241);
+    border: solid 1px rgb(30, 81, 140);
+}
+
+.even-item {
+    background-color: rgb(196, 196, 247);
+    border: solid 1px rgb(91, 31, 136);
+
+}
+
+#itemList {
+    list-style-type: none;
+}
+
+.btn {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 18pt;
+    cursor:pointer;
+}
+
+#btnAddItem {
+    background-color: rgb(203, 241, 165);
+    border: solid 1px rgb(30, 140, 35);
+}
+#btnSubItem {
+    background-color: rgb(241, 175, 165);
+    border: solid 1px rgb(140, 30, 30);
+}
