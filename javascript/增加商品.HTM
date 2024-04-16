@@ -2,29 +2,72 @@
 <html>
     <head>
         <title>測驗</title>
+        <style>
+            .input-name,
+            .input-price{
+                width:100px;
+            }
+            .product-grid{
+                margin-top:20px;
+                display: grid;
+                grid-template-columns: 112px 112px 50px;
+                row-gap: 10px;
+            }
+        </style>
     </head>
     <body>
-        <input  placeholder="輸入商品名稱">
+        <input class="input-name" placeholder="輸入商品名稱">
+        <input class="input-price" placeholder="輸入商品價格">
         <button onclick="addProduct();">新增</button>
-        <div>
-            
-        </div>
+        
+            <div class="product-grid">
+                <!-- 商品1 -->
+                <!-- <div>海底撈泡麵</div>
+                <div>200</div>
+                <button>刪除</button> -->
+    
+                <!-- 商品2 -->
+                <!-- <div>養氣人蔘</div>
+                <div>400</div>
+                <button>刪除</button> -->
+            </div>  
+        
 
         <script>
             let product = [];
-            function addProduct(){
-                const input = document.querySelector("input");
-                product.push(input.value);
-                input.value = "";
-                console.log(product);
-                
+            function rederProduct(){  //更新畫面
                 let html = "";
-                for (i=0; i<product.length; i++){
-                    html += `<p>${product[i]}</p>`;
+                    for (i=0; i<product.length; i++){
+                    html +=
+                    `<div>${product[i].name}</div>
+                    <div>${product[i].price}</div>
+                    <button onclick='removeProduct(${i})'>刪除</button>`
                 }
-                
-                document.querySelector("div").innerHTML = 
+                document.querySelector(".product-grid").innerHTML = 
                 html;
+            }
+
+            function addProduct(){
+                const name = document.querySelector(".input-name");
+                const price = document.querySelector(".input-price");
+                product.push(  //取得物件 name and price
+                    {
+                        name: name.value,
+                        price: price.value  
+                    });
+                    
+                    name.value="";
+                    price.value="";
+
+
+                    rederProduct();
+
+                
+            }
+
+            function removeProduct(i){ //將變數i傳進函數中
+                product.splice(i, 1);  //刪除陣列 從第i位 切割1個
+                rederProduct();
             }
 
 
