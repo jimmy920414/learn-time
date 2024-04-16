@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI計算資料</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="1102.js"></script>
+    <link rel="stylesheet" href="1102.css"> -->
+    <style>
+        input[type="number"] {
+        text-align: right;
+        }
+        </style>
+    
+</head>
+<body>
+    <body>
+        <form action="bmi_result.php" method="post">
+        <div>
+        身高：<input type="number" name="height" value="165" min="120" max="220" />公分
+        </div>
+        <div>
+        體重：<input type="number" name="weight" value="55" min="30" max="160" />公斤
+        </div>
+        <div>
+        <input type="submit" value="送出" />
+        </div>
+        </form>
+</body>
+</html>
